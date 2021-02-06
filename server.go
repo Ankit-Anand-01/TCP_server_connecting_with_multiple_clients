@@ -35,11 +35,9 @@ func main() {
 func handleClientRequest(con net.Conn) {
 	defer con.Close()
 
-	cr := bufio.NewReader(con)
-
 	for {
 		//reading the string
-		netData, err := cr.ReadString('\n')
+		netData, err := bufio.NewReader(con).ReadString('\n')
 		//error handling
 		if err != nil {
 			fmt.Println(err)
@@ -50,7 +48,7 @@ func handleClientRequest(con net.Conn) {
 			fmt.Println("closed")
 			return
 		}
-
+		fmt.Print("message received:")
 		fmt.Print(string(netData))
 		
 	}
