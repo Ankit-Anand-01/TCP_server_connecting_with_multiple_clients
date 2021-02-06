@@ -10,6 +10,7 @@ import (
 func main() {
 	//start the server
 	ln, err := net.Listen("tcp", ":8080")
+	fmt.Println("server is ready now.")
 	//error handling
 	if err != nil {
 		fmt.Println(err)
