@@ -52,9 +52,6 @@ func handleClientRequest(con net.Conn) {
 		}
 
 		fmt.Print(string(netData))
-		//reader := bufio.NewReader(os.Stdin)
-		//fmt.Print("message sent: ")
-		//text, _ := reader.ReadString('\n')
-		//fmt.Fprintf(c, text+"\n")
+		
 	}
 }
